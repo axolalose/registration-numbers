@@ -26,12 +26,15 @@ function regNumber(loc) {
     if (!isValid) {
       return "PLEASE ENTER CORRECT REGISTRATION";
     }
-    // }else{
-    //   //localStorage["Reg"] = JSON.stringify(regNum);
-    // }
-    // localStorage["Reg"] = JSON.stringify(regNum);
-      // console.log(storedReg);
   }
+  // function dontRepeat(Reg){
+  //   var apeared = Reg.value;
+  //   if(regex !== null){
+    
+  //     if (storedReg[regUp] === undefined) {
+  //       storedReg[regUp] = 0;
+  //     }
+  // }
 
   function fromCape(regsFromCapeTown) {
     var capeTown = [];
@@ -63,7 +66,7 @@ function regNumber(loc) {
       if (elem.startsWith("CW")) {
         regMel.push(elem);
       }
-    }
+    }sameName
 
     return regMel;
   }
@@ -75,7 +78,8 @@ function regNumber(loc) {
     fromBelv,
     fromMel,
     regList,
-   warnMassages
+   warnMassages,
+  // dontRepeat
   };
 }
 

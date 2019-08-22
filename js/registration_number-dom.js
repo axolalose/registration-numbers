@@ -31,20 +31,11 @@ function RegDom() {
     show.innerHTML = loc.warnMassages(warning);
   } else {
     var btn = document.createElement("li");
-    show.innerHTML = '';
-    //instance.find(show)
-    //instance.getAll();
     btn.innerHTML = warning;
     show.insertBefore(btn, show.childNodes[0]);
+    
     regNum.push(warning);
 
-    // var regex = /(CA-Z){2}\5[0-9]{6}/g;
-    // var newReg = regex.test();
-    // if (!newReg) {
-    //   errorElement.innerHTML = "invalid";
-    //   errorMassages();
-    //   return;
-    // }
     localStorage["Reg"] = JSON.stringify(regNum);
   }
 }
