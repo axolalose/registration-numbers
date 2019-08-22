@@ -67,7 +67,7 @@ function regNumber(loc) {
       if (elem.startsWith("CW")) {
         regMel.push(elem);
       }
-    }sameName
+    }
 
     return regMel;
   }
