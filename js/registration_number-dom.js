@@ -28,15 +28,23 @@ function RegDom() {
   if (warning == "" || warning == undefined) {
     return (warn.innerHTML = "please add reg");
   } else if (loc.warnMassages(warning)) {
-    show.innerHTML = loc.warnMassages(warning);
+    warn.innerHTML = loc.warnMassages(warning);
   } else {
-    var btn = document.createElement("li");
-    btn.innerHTML = warning;
-    show.insertBefore(btn, show.childNodes[0]);
-    
-    regNum.push(warning);
+   
+    if(!regNum.includes(warning)){
+      var btn = document.createElement("li");
+      btn.innerHTML = warning;
+      show.insertBefore(btn, show.childNodes[0]);
+  
+      regNum.push(warning);
+      localStorage["Reg"] = JSON.stringify(regNum);
+      warn.innerHTML = ""
 
-    localStorage["Reg"] = JSON.stringify(regNum);
+    } else{
+      warn.innerHTML = "registration already added";
+    }
+   
+
   }
 }
 
