@@ -36,7 +36,7 @@ function RegDom() {
       btn.innerHTML = warning;
       show.insertBefore(btn, show.childNodes[0]);
   
-      regNum.push(warning);
+      regNum.push(warning.toUpperCase());
       localStorage["Reg"] = JSON.stringify(regNum);
       warn.innerHTML = ""
 

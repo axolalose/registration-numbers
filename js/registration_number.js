@@ -1,5 +1,6 @@
 function regNumber(loc) {
-  var getTown = "";
+  //var getTown = [""];
+ // console.log(getTown.slice(9));
   var storedReg = [];
   //var number = "";
 
@@ -7,40 +8,37 @@ function regNumber(loc) {
     // var l =
     return storedReg;
   }
-//   function allReg(Reg) {
-//     var regShow = [];
-//     var apear = Reg;
-//     if (!apear.includes(Reg)) {
-// //storedReg.push(regShow);
-//     }
-//   }
+
+
+  // function List(Reg){
+  //   var getTown = [];
+  //   if (getTown.length === 2){
+  //     return;
+  //   }else if(getTown[Reg] === undefined){
+  //     return 0;
+  //   }
+  // }
+
   function regList() {
     return storedReg;
   }
 
-
   function warnMassages(Reg) {
     var regUp = Reg.toUpperCase();
-    var regex = /([A-Z]{2}\s[0-9]{3}\s[0-9]{3})/g;
+    //var myREgs = myREgs.slice(0, 9);
+    var regex = /([A-Z]{2}\s[0-9]{3}\s[0-9]{3})$/;
     var isValid = regex.test(regUp);
     // console.log(isValid);
     if (!isValid) {
       return "PLEASE ENTER CORRECT REGISTRATION";
     }
   }
-  // function dontRepeat(Reg){
-  //   var apeared = Reg.value;
-  //   if(regex !== null){
-    
-  //     if (storedReg[regUp] === undefined) {
-  //       storedReg[regUp] = 0;
-  //     }
-  // }
 
   function fromCape(regsFromCapeTown) {
     var capeTown = [];
     for (i = 0; i < regsFromCapeTown.length; i++) {
       var elem = regsFromCapeTown[i];
+      console.log(elem);
       if (elem.startsWith("CA")) {
         capeTown.push(elem);
       }
@@ -80,10 +78,12 @@ function regNumber(loc) {
     fromMel,
     regList,
    warnMassages,
+  //  List
+  
   // dontRepeat
   };
-}
 
+}
 //  var test = regNumber();
 //  var regs = ['CA 2323', 'CA 777', 'CY 2323']
 

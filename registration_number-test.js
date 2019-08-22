@@ -28,4 +28,23 @@ describe ("regNumber", function(){
         assert.deepEqual([],  numberReg.regTown()); 
     })
 
+    describe('', () => {
+        const regex =  /([A-Z]{2}\s[0-9]{3}\s[0-9]{3})$/;
+        it('return true for valid', () => {
+            assert.equal(true, regex.test('CA 123 333'))
+        })
+
+        it('return true for valid', () => {
+            assert.equal(true, regex.test('CA 123 330'))
+        })
+
+        it('return false for valid', () => {
+            assert.equal(false, regex.test('CA 123 FFFF'))
+        })
+
+        it('return false for valid', () => {
+            assert.equal(false, regex.test('CA 123 333 88888'))
+        })
+    })
+
 })
