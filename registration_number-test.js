@@ -30,19 +30,19 @@ describe ("regNumber", function(){
 
     describe('', () => {
         const regex =  /([A-Z]{2}\s[0-9]{3}\s[0-9]{3})$/;
-        it('return true for valid', () => {
+        it('return true for valid registration', () => {
             assert.equal(true, regex.test('CA 123 333'))
         })
 
-        it('return true for valid', () => {
+        it('return true for valid registration', () => {
             assert.equal(true, regex.test('CA 123 330'))
         })
 
-        it('return false for valid', () => {
+        it('return false for NOT valid registration', () => {
             assert.equal(false, regex.test('CA 123 FFFF'))
         })
 
-        it('return false for valid', () => {
+        it('return false for NOT valid registration', () => {
             assert.equal(false, regex.test('CA 123 333 88888'))
         })
     })
