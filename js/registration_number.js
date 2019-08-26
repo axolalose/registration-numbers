@@ -1,33 +1,20 @@
 function regNumber(loc) {
   var storedReg = [];
 
-  function regTown() {
-    return storedReg;
-  }
-
   function regList() {
     return storedReg;
   }
 
   function warnMassages(Reg) {
     var regUp = Reg.toUpperCase();
-    var regex = /([A-Z]{2}\s[0-9]{3}\s[0-9]{3})$/;
+    var regex = (/([A-Z]{2}\s[0-9]{3}\W[0-9]{3})$/);
     var isValid = regex.test(regUp);
     if (!isValid) {
       return "PLEASE ENTER CORRECT REGISTRATION";
     }
   }
 
-  function selectReg(plate) {
-    var validReg = ["CA", "CY", "CW"];
-    var regCase = plate.toUpperCase();
-    var regResults = false;
-    for (let i = 0; i < validReg.length; i++)
-      if (regCase.startsWith(regResults)) {
-        result = true;
-      }
-    return result;
-  }
+
   function fromCape(regsFromCapeTown) {
     var capeTown = [];
     for (i = 0; i < regsFromCapeTown.length; i++) {
@@ -65,13 +52,11 @@ function regNumber(loc) {
   }
 
   return {
-    regTown,
     fromCape,
     fromBelv,
     fromMel,
     regList,
    warnMassages,
-   selectReg
   
   
   };

@@ -22,16 +22,17 @@ var regNum = loc.regList();
 
 function RegDom() {
   var warning = regElem.value;
+  
   if (warning == "" || warning == undefined) {
     return (warn.innerHTML = "please add reg");
   } else if (loc.warnMassages(warning)) {
     warn.innerHTML = loc.warnMassages(warning);
-  } else {
-   
-    if(!regNum.includes(warning)){
+  } else {   
+    if(!regNum.includes(warning.toUpperCase())){
       var btn = document.createElement("li");
       btn.innerHTML = warning;
-      show.insertBefore(btn, show.childNodes[0]);
+      show.insertBefore(btn, show.childNodes[0]);5
+      //show.innerHTML = ""
   
       regNum.push(warning.toUpperCase());
       localStorage["Reg"] = JSON.stringify(regNum);
@@ -40,11 +41,8 @@ function RegDom() {
     } else{
       warn.innerHTML = "registration already added";
     }
-   
-
   }
 }
-
 
 
 function myShow() {
