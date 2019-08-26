@@ -17,14 +17,11 @@ if (localStorage["Reg"]) {
   regStore = [];
 }
 var loc = regNumber(regStore);
-// var factoryInstance = regNumber(regStore);
 
 var regNum = loc.regList();
-//addBtnElem.innerHTML = regNum.regTown()
 
 function RegDom() {
   var warning = regElem.value;
-  //var typeReg = RegistrationElem.value;
   if (warning == "" || warning == undefined) {
     return (warn.innerHTML = "please add reg");
   } else if (loc.warnMassages(warning)) {
@@ -48,17 +45,7 @@ function RegDom() {
   }
 }
 
-function selectReg(plate) {
-  var validReg = ["CA", "CY", "CW"];
-  var regCase = plate.toUpperCase();
-  var regResults = false;
-  for (let i = 0; i < validReg.length; i++)
-    //const regCase = validReg[i];
-    if (regCase.startsWith(regResults)) {
-      result = true;
-    }
-  return result;
-}
+
 
 function myShow() {
   let radiosElems = document.querySelectorAll(".radios");
@@ -68,7 +55,6 @@ function myShow() {
     let currentRadio = radiosElems[i];
 
     if (currentRadio.checked) {
-      //console.log(currentRadio.value)
       if (currentRadio.value === "Bellvile") {
         regFilter = loc.fromBelv(regNum);
       }
@@ -100,14 +86,6 @@ function allShow(regAll) {
   return text;
 }
 
-//addBtnElem.addEventListener('click', addBtn)
 showBtnElem.addEventListener("click", myShow);
 addBtnElem.addEventListener("click", RegDom);
 
-// var myMap =  new Map()
-// myMap.set("unalo", 1);
-
-// myMap.get(unalo);
-// myMap.has(unalo) {
-//   myMap.
-// }
