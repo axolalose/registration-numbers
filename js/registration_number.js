@@ -1,5 +1,5 @@
 function regNumber(loc) {
-  var storedReg = [];
+  var storedReg = loc || [];
 
   function regList() {
     return storedReg;
@@ -16,10 +16,11 @@ function regNumber(loc) {
 
 
   function fromCape(regsFromCapeTown) {
+    
     var capeTown = [];
     for (i = 0; i < regsFromCapeTown.length; i++) {
       var elem = regsFromCapeTown[i];
-      console.log(elem);
+     // console.log(elem);
       if (elem.startsWith("CA")) {
         capeTown.push(elem);
       }

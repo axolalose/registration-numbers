@@ -8,17 +8,21 @@ var show = document.querySelector(".display");
 var btn1 = document.createElement("button");
 var showBtnElem = document.querySelector(".show");
 var warn = document.querySelector(".warnMAssages");
+var restBtnElem = document.querySelector(".rest");
 
-let regStore;
 
 if (localStorage["Reg"]) {
-  regStore = JSON.parse(localStorage["Reg"]);
+ var regStore = JSON.parse(localStorage["Reg"]);
 } else {
   regStore = [];
 }
+
+
 var loc = regNumber(regStore);
 
 var regNum = loc.regList();
+
+
 
 function RegDom() {
   var warning = regElem.value;
@@ -31,9 +35,8 @@ function RegDom() {
     if(!regNum.includes(warning.toUpperCase())){
       var btn = document.createElement("li");
       btn.innerHTML = warning;
-      show.insertBefore(btn, show.childNodes[0]);5
-      //show.innerHTML = ""
-  
+      show.insertBefore(btn, show.childNodes[0]);
+    
       regNum.push(warning.toUpperCase());
       localStorage["Reg"] = JSON.stringify(regNum);
       warn.innerHTML = ""
@@ -66,7 +69,7 @@ function myShow() {
         regFilter = loc.regList();
       }
     }
-  }
+  }  
   if (regFilter.length > 0) {
     for (let i = 0; i < regFilter.length; i++) {
       const element = regFilter[i];
@@ -77,6 +80,7 @@ function myShow() {
     }
   }
 }
+
 function allShow(regAll) {
   var all = document.createElement("li");
   var text = document.createTextNode(regAll);
@@ -84,6 +88,15 @@ function allShow(regAll) {
   return text;
 }
 
+window.addEventListener("load", allShow)
+
+function resetBtn() {
+  window.location.reload();
+  localStorage.clear();
+  show.innerHTML = "";
+}
+
+restBtnElem.addEventListener('click', resetBtn)
 showBtnElem.addEventListener("click", myShow);
 addBtnElem.addEventListener("click", RegDom);
 
