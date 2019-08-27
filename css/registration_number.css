@@ -50,6 +50,8 @@ th,
     text-align: center;
     list-style: none;
     text-transform: uppercase;
+    float: left;
+    margin: 1em;
   }
 
 
@@ -76,7 +78,9 @@ th,
   color: black;
   line-height: 1.5;
 }
-
+.warnMAssages{
+  color: red;
+}
 /* TYPOGRAPHY */
 
 h1 {

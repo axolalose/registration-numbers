@@ -22,7 +22,7 @@ var loc = regNumber(regStore);
 
 var regNum = loc.regList();
 
-
+allShow(loc.regList());
 
 function RegDom() {
   var warning = regElem.value;
@@ -38,7 +38,7 @@ function RegDom() {
       show.insertBefore(btn, show.childNodes[0]);
     
       regNum.push(warning.toUpperCase());
-      localStorage["Reg"] = JSON.stringify(regNum);
+      localStorage["Reg"] = JSON.stringify(loc.regList());
       warn.innerHTML = ""
 
     } else{
@@ -46,7 +46,14 @@ function RegDom() {
     }
   }
 }
-
+if(localStorage.getItem("Reg")){
+  var regStore = JSON.parse(localStorage["Reg"]);
+  
+  for(var i=0;i < regStore.length; i++){
+    var regstoreItem = regStore[i]
+    show.innerHTML += "<li>" +regstoreItem+"</li>";
+  }
+}
 
 function myShow() {
   let radiosElems = document.querySelectorAll(".radios");
