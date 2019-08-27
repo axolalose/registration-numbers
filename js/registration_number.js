@@ -13,6 +13,18 @@ function regNumber(loc) {
       return "PLEASE ENTER CORRECT REGISTRATION";
     }
   }
+  function checkReg(plate){
+    var vaildReg = ['CA ', 'CY', 'CW'];
+    var regExpected = plate.toUpperCase();
+    var results = false;
+    for(var i=0; i<vaildReg.length; i++){
+      const elem = vaildReg[i];
+      if(regExpected.startsWith(elem)){
+        results = true;
+      }
+    }
+    return results;
+  }
 
 
   function fromCape(regsFromCapeTown) {
@@ -58,6 +70,7 @@ function regNumber(loc) {
     fromMel,
     regList,
    warnMassages,
+   checkReg
   
   
   };

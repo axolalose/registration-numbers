@@ -31,7 +31,10 @@ function RegDom() {
     return (warn.innerHTML = "please add reg");
   } else if (loc.warnMassages(warning)) {
     warn.innerHTML = loc.warnMassages(warning);
-  } else {   
+  }else if(!loc.checkReg(warning.toUpperCase())){
+    warn.innerHTML = "not CORRECT town";
+  }
+   else {   
     if(!regNum.includes(warning.toUpperCase())){
       var btn = document.createElement("li");
       btn.innerHTML = warning;
@@ -54,6 +57,7 @@ if(localStorage.getItem("Reg")){
     show.innerHTML += "<li>" +regstoreItem+"</li>";
   }
 }
+
 
 function myShow() {
   let radiosElems = document.querySelectorAll(".radios");

@@ -28,6 +28,16 @@ describe ("regNumber", function(){
         assert.deepEqual([],  numberReg.regTown()); 
     })
 
+    it("Should return false when entered not expected towns e.g GF", function(){
+        var numberReg = regNumber();
+        assert.equal(false,numberReg.checkReg('JP 545 366'))
+    })
+
+    it("Should return true when entered not expected towns e.g GF", function(){
+        var numberReg = regNumber();
+        assert.equal(true, numberReg.checkReg('CA 545 366'))
+    })
+
     describe('', () => {
         const regex =  /([A-Z]{2}\s[0-9]{3}\s[0-9]{3})$/;
         it('return true for valid registration', () => {
