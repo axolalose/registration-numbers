@@ -25,8 +25,6 @@ function regNumber(loc) {
     }
     return results;
   }
-
-
   function fromTown(location) {
     
     var town = [];

@@ -8,7 +8,7 @@ var show = document.querySelector(".display");
 var btn1 = document.createElement("button");
 var showBtnElem = document.querySelector(".show");
 var warn = document.querySelector(".warnMAssages");
-var restBtnElem = document.querySelector(".rest");
+var resetBtnElem = document.querySelector(".reset");
 
 
 if (localStorage["Reg"]) {
@@ -95,7 +95,7 @@ function resetBtn() {
   show.innerHTML = "";
 }
 
-restBtnElem.addEventListener('click', resetBtn)
+resetBtnElem.addEventListener('click', resetBtn)
 showBtnElem.addEventListener("click", myShow);
 addBtnElem.addEventListener("click", RegDom);
 
