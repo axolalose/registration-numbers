@@ -27,47 +27,23 @@ function regNumber(loc) {
   }
 
 
-  function fromCape(regsFromCapeTown) {
+  function fromTown(location) {
     
-    var capeTown = [];
-    for (i = 0; i < regsFromCapeTown.length; i++) {
-      var elem = regsFromCapeTown[i];
-     // console.log(elem);
-      if (elem.startsWith("CA")) {
-        capeTown.push(elem);
+    var town = [];
+    for (i = 0; i < storedReg.length; i++) {
+      var elem = storedReg[i];
+      console.log(elem);
+      console.log(location)
+      if (elem.startsWith(location)) {
+        town.push(elem);
       }
     }
-
-    return capeTown;
-  }
-  function fromBelv(regsFromBelv) {
-    var regBelv = [];
-    for (i = 0; i < regsFromBelv.length; i++) {
-      var elem = regsFromBelv[i];
-      if (elem.startsWith("CY")) {
-        regBelv.push(elem);
-      }
-    }
-
-    return regBelv;
-  }
-
-  function fromMel(regsFromMel) {
-    var regMel = [];
-    for (i = 0; i < regsFromMel.length; i++) {
-      var elem = regsFromMel[i];
-      if (elem.startsWith("CW")) {
-        regMel.push(elem);
-      }
-    }
-
-    return regMel;
+    console.log(town)
+    return town;
   }
 
   return {
-    fromCape,
-    fromBelv,
-    fromMel,
+    fromTown,
     regList,
    warnMassages,
    checkReg

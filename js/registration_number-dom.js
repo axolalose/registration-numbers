@@ -60,27 +60,15 @@ if(localStorage.getItem("Reg")){
 
 
 function myShow() {
-  let radiosElems = document.querySelectorAll(".radios");
-  show.innerHTML = "";
-  let regFilter = [];
-  for (let i = 0; i < radiosElems.length; i++) {
-    let currentRadio = radiosElems[i];
 
-    if (currentRadio.checked) {
-      if (currentRadio.value === "Bellvile") {
-        regFilter = loc.fromBelv(regNum);
-      }
-      if (currentRadio.value === "Cape Town") {
-        regFilter = loc.fromCape(regNum);
-      }
-      if (currentRadio.value === "Malmesbury") {
-        regFilter = loc.fromMel(regNum);
-      }
-      if (currentRadio.value === "") {
-        regFilter = loc.regList();
-      }
-    }
-  }  
+
+  let radiosElems = document.querySelector('input[name="check"]:checked').value;
+  show.innerHTML = "";
+
+  let regFilter = [];
+  regFilter = loc.fromTown(radiosElems);
+
+
   if (regFilter.length > 0) {
     for (let i = 0; i < regFilter.length; i++) {
       const element = regFilter[i];
