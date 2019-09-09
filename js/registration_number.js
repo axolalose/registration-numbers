@@ -23,6 +23,7 @@ function regNumber(loc) {
         results = true;
       }
     }
+
     return results;
   }
   function fromTown(location) {
@@ -36,9 +37,9 @@ function regNumber(loc) {
         town.push(elem);
       }
     }
-    console.log(town)
     return town;
   }
+
 
   return {
     fromTown,

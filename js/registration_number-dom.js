@@ -15,13 +15,10 @@ if (localStorage["Reg"]) {
  var regStore = JSON.parse(localStorage["Reg"]);
 } else {
   regStore = [];
+  
 }
-
-
 var loc = regNumber(regStore);
-
 var regNum = loc.regList();
-
 allShow(loc.regList());
 
 function RegDom() {
@@ -60,8 +57,6 @@ if(localStorage.getItem("Reg")){
 
 
 function myShow() {
-
-
   let radiosElems = document.querySelector('input[name="check"]:checked').value;
   show.innerHTML = "";
 
